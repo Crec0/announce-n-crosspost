@@ -75,6 +75,7 @@ async function sendAndPublishMessage(axiosInstance, channel, content) {
 
     const responseJson = response.data;
     const messageId = responseJson.id;
+    core.setOutput("message-id", messageId);
 
     const crosspostRequest = prepareRoute(CROSSPOST_MESSAGE, { channel: channel,  message: messageId});
     const crosspostResponse = await axiosInstance.post(crosspostRequest, {data: responseJson});
