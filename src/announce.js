@@ -55,9 +55,9 @@ async function getNewsChannelNameAndGuild(axiosInstance, channel) {
 }
 
 async function sendAndPublishMessage(axiosInstance, channel, content) {
-    core.debug("Checking if news channel");
+    core.info("Checking if news channel");
     const {channelName, guildName} = await getNewsChannelNameAndGuild(axiosInstance, channel);
-    core.debug(`News channel found. Sending message to '${channelName}' in '${guildName}'`);
+    core.info(`News channel found. Sending message to '${channelName}' in '${guildName}'`);
 
     const routeUrl = prepareRoute(MESSAGES, {channel});
     const response = await axiosInstance.post(routeUrl, content);
@@ -66,12 +66,12 @@ async function sendAndPublishMessage(axiosInstance, channel, content) {
         throw new Error(
             `(${response.status}) Failed to send message in ${channelName} in ${guildName}. ` +
             `Error: ${response.statusText}. ` +
-            `Please check the bot if it has SEND_MESSAGES permission. `
+            `Please check the bot if it has SEND_MESSAGES permission.`
         );
     }
 
-    core.debug("Message sent");
-    core.debug(`Publishing message sent in ${channelName} in ${guildName}`);
+    core.info("Message sent");
+    core.info(`Publishing message sent in ${channelName} in ${guildName}`);
 
     const responseJson = response.data;
     const messageId = responseJson.id;
@@ -81,10 +81,11 @@ async function sendAndPublishMessage(axiosInstance, channel, content) {
     if (crosspostResponse.status !== SUCCESS) {
         throw new Error(
             `(${response.status}) Failed to crosspost message in ${channelName} in ${guildName}. ` +
-            `Error: ${response.statusText}. `
+            `Error: ${response.statusText}.`
         );
     }
-    core.debug("Message published in news channel");
+    core.info(`Message crossposted in ${channelName} in ${guildName}`);
+    core.notice(`Message successfully send and crossposted in ${channelName} in ${guildName}`);
 }
 
 async function announce() {
@@ -102,9 +103,9 @@ async function announce() {
         validateStatus: () => true
     });
 
-    core.debug("Verifying token");
+    core.info("Verifying token");
     await verifyToken(axiosInstance);
-    core.debug("Token verified");
+    core.info("Token verified");
 
     await sendAndPublishMessage(axiosInstance, channel, { content });
 }
