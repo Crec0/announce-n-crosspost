@@ -16,10 +16,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Publish a text
+      - name: Test single line content
+        uses: ./
+        with:
+          bot-token: ${{ secrets.DISCORD_BOT_TOKEN }}
+          channel: ${{ secrets.CHANNEL_ID }}
+          content: Single line content test. Hi!
+
+      - uses: actions/checkout@v3
+      - name: Test multi line content
         uses: ./
         with:
           bot-token: ${{ secrets.DISCORD_BOT_TOKEN }}
           channel: ${{ secrets.CHANNEL_ID }}
           content: |
-            Hi from github actions!
+            Multi line content test.
+            
+            Wowie!
+            
+            Does it work  ?
+            
+            Hi!
