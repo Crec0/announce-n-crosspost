@@ -81,8 +81,7 @@ async function sendAndPublishMessage(axiosInstance, channel, content) {
     if (crosspostResponse.status !== SUCCESS) {
         throw new Error(
             `(${response.status}) Failed to crosspost message in ${channelName} in ${guildName}. ` +
-            `Error: ${response.statusText}. ` +
-            `Please check if the bot has MANAGE_MESSAGES permission.`
+            `Error: ${response.statusText}. `
         );
     }
     core.debug("Message published in news channel");
