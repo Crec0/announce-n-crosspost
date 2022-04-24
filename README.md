@@ -4,11 +4,11 @@ Simple action which sends a message over to discord news channel and crossposts 
 
 ## Inputs
 
-| Input name | Description                                                                                                                        | Required | Default Value |
-|------------|------------------------------------------------------------------------------------------------------------------------------------|----------|---------------|
-| bot-token  | Discord bot token. This bot should have `SEND_MESSAGES` and `MANAGE_MESSAGES` permissions in the news channel you want to post in. | `true`   | `N/A`         |
-| channel    | A string being the channel id of the news channel you want to post the message in. Channel **MUST** be a news channel.             | `true`   | `N/A`         |
-| content    | The message content which should be sent.                                                                                          | `true`   | `N/A`         |
+| Input name | Description                                                                                                            | Required | Default Value |
+|------------|------------------------------------------------------------------------------------------------------------------------|----------|---------------|
+| bot-token  | Discord bot token. This bot should have the `SEND_MESSAGES` permission in the news channel you want to post in.        | `true`   | `N/A`         |
+| channel    | A string being the channel id of the news channel you want to post the message in. Channel **MUST** be a news channel. | `true`   | `N/A`         |
+| content    | The message content which should be sent.                                                                              | `true`   | `N/A`         |
 
 ## Example Job
 
