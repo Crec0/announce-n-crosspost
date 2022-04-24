@@ -1,0 +1,19 @@
+name: 'announce-n-crosspost'
+description: 'Announce the github release in discord announcement channel and crosspost it to following channels'
+branding:
+  icon: radio
+  color: purple
+inputs:
+  bot-token:
+    description: 'The discord bot token to use for sending the message'
+    required: true
+    default: null
+  content:
+    description: 'The content of the message to send'
+    required: true
+    default: null
+  channel:
+    description: 'The channel to send and crosspost the message to'
+    required: true
+    default: null
+

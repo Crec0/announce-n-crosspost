@@ -1,0 +1,32 @@
+{
+  "name": "announce-n-crosspost",
+  "version": "1.0.0",
+  "description": "Send a message in announcement channel and crosspost it.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "all": "yarn lint && yarn prepare"
+  },
+  "repository": "https://github.com/Crec0/announce-n-crosspost.git",
+  "keywords": [
+    "github",
+    "action",
+    "announce",
+    "discord",
+    "crosspost"
+  ],
+  "author": "Crec0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Crec0/announce-n-crosspost/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.4",
+    "eslint": "^8.14.0"
+  }
+}
