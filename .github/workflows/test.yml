@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish a text
+        uses: ./
+        with:
+          bot-token: ${{ secrets.DISCORD_BOT_TOKEN }}
+          channel: ${{ secrets.CHANNEL_ID }}
+          content: |
+            Hi from github actions!
