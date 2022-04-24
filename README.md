@@ -17,7 +17,7 @@ Simple action which sends a message over to discord news channel and crossposts 
     runs-on: ubuntu-latest
     steps:
       - name: Publish
-        uses: Crec0/announce-n-crosspost@1
+        uses: Crec0/announce-n-crosspost@v1
         with:
           bot-token: ${{ secrets.DISCORD_BOT_TOKEN }}
           channel: $CHANNEL_ID
