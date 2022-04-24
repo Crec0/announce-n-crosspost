@@ -13,4 +13,6 @@ inputs:
   content:
     description: 'The content of the message to send'
     required: true
-
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
