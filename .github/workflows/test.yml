@@ -23,7 +23,6 @@ jobs:
           channel: ${{ secrets.CHANNEL_ID }}
           content: Single line content test. Hi!
 
-      - uses: actions/checkout@v3
       - name: Test multi line content
         uses: ./
         with:
