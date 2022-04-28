@@ -12,9 +12,9 @@ Simple action which sends a message over to discord news channel and crossposts 
 
 # Outputs
 
-| Input name | Description                             |
-|------------|-----------------------------------------|
-| message-id | Id of the messages sent in news channel |
+| Output name | Description                             |
+|-------------|-----------------------------------------|
+| message-id  | Id of the messages sent in news channel |
 
 ## Example Job
 
