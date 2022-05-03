@@ -86,7 +86,6 @@ async function sendAndPublishMessage(axiosInstance, channel, content) {
         );
     }
     core.info(`Message crossposted in ${channelName} in ${guildName}`);
-    core.notice(`Message successfully send and crossposted in ${channelName} in ${guildName}`);
 }
 
 async function announce() {
